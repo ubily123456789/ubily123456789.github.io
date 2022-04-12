@@ -1,6 +1,10 @@
-h1 {
+ .hello {
     font-family: fantasy;
-    color: green;
+    color: darkblue;
     font-size: 100px;
     text-align: center;
+}
+* {
+    padding: 0;
+    margin: 0;
 }
