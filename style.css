@@ -1,10 +1,11 @@
- .hello {
-    font-family: fantasy;
+ .hello { /* text changes */
+    font-family: arial;
     color: blue;
-    font-size: 100px;
+    font-size: 70px;
     text-align: center;
 }
 * {
+    /* ??? */
     padding: 0;
     margin: 0;
 }
