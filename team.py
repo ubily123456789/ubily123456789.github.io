@@ -31,16 +31,8 @@ image2 = pygame.image.load(os.path.join(img_folder, "p1_jump.png")).convert()
 background = pygame.image.load(os.path.join("Assets", "space.png"))
 
 class enime():
-    def ___init__(self, speed, size, num):
-        self.speed = speed
-        self.size = size
-        self.speed = random.randrange(3, 6)
-        self.size = random.randrange(1, 10)
+    def ___init__(self):
         self.num = num
-
-    def drwaw():
-        for i in range(num):
-            WIN.blit(boarder, (i * 2, i * 2))
 
 new1 = enime()
 
