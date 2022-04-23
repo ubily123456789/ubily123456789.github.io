@@ -31,8 +31,8 @@ image2 = pygame.image.load(os.path.join(img_folder, "p1_jump.png")).convert()
 background = pygame.image.load(os.path.join("Assets", "space.png"))
 
 class enime():
-    def ___init__(self):
-        self.num = num
+    def ___init__(self, num):
+        self.num = int(num)
 
 new1 = enime()
 
