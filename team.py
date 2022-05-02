@@ -1,6 +1,5 @@
 # a project whith me and nathan!
 import pygame
-import random
 import os
 
 # getting the window
@@ -20,6 +19,7 @@ BLUE = (0, 0, 255)
 CYAN = (0, 255, 255)
 MAGENTA = (255, 0, 255)
 
+aleinwx, aleinwy = 900, 500
 aleinx, aleiny = 300, 500
 border = pygame.Rect(595, 0, 10, HEIGHT)
 
@@ -40,7 +40,7 @@ new1 = enime()
 def draw():
     WIN.blit(background, (0, 0))
     WIN.blit(image, (aleinx, aleiny))
-    WIN.blit(image, (aleinx + 600, aleiny))
+    WIN.blit(image, (aleinwx, aleinwy))
     pygame.draw.rect(WIN, BLACK, border)
     image.set_colorkey(BLACK)
     pygame.display.flip()
@@ -49,6 +49,8 @@ def move():
     keys_press = pygame.key.get_pressed()
     global aleinx
     global aleiny
+    global aleinwx
+    global aleinwy
     if keys_press[pygame.K_a] and aleinx - 5 > 0:
         aleinx -= 7
 
@@ -61,6 +63,18 @@ def move():
     if keys_press[pygame.K_s] and aleiny < HEIGHT - 100:
         aleiny += 7
 
+    if keys_press[pygame.K_LEFT] and aleinwx - 10 > border.x:
+        aleinwx -= 7
+
+    if keys_press[pygame.K_RIGHT] and aleinwx + 75 < WIDTH:
+        aleinwx += 7
+
+    if keys_press[pygame.K_UP] and aleinwy - 5 > 0:
+        aleinwy -= 7
+
+    if keys_press[pygame.K_DOWN] and aleinwy + 100 < HEIGHT:
+        aleinwy += 7
+
 def main():
     clock = pygame.time.Clock()
     alein = pygame.Rect(700, 300, 55, 40)
@@ -69,7 +83,7 @@ def main():
         clock.tick(FPS)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                run = False
+                run = Fa
         draw()
         move()
     pygame.quit()
