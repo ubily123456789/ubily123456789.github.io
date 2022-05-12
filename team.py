@@ -30,12 +30,6 @@ image = pygame.image.load(os.path.join(img_folder, "p2_jump.png")).convert()
 image2 = pygame.image.load(os.path.join(img_folder, "p1_jump.png")).convert()
 background = pygame.image.load(os.path.join("Assets", "space.png"))
 
-class enime():
-    def ___init__(self, num):
-        self.num = int(num)
-
-new1 = enime()
-
 # functions
 def draw():
     WIN.blit(background, (0, 0))
@@ -46,11 +40,9 @@ def draw():
     pygame.display.flip()
 
 def move():
-    keys_press = pygame.key.get_pressed()
     global aleinx
     global aleiny
-    global aleinwx
-    global aleinwy
+    keys_press = pygame.key.get_pressed()
     if keys_press[pygame.K_a] and aleinx - 5 > 0:
         aleinx -= 7
 
@@ -62,6 +54,9 @@ def move():
 
     if keys_press[pygame.K_s] and aleiny < HEIGHT - 100:
         aleiny += 7
+
+    global aleinwx
+    global aleinwy
 
     if keys_press[pygame.K_LEFT] and aleinwx - 10 > border.x:
         aleinwx -= 7
@@ -83,7 +78,7 @@ def main():
         clock.tick(FPS)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                run = Fa
+                run = False
         draw()
         move()
     pygame.quit()
