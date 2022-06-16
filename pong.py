@@ -6,7 +6,7 @@ import os
 # window stuff
 WIDTH, HEIGHT = 950, 550
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("baseball game!")
+pygame.display.set_caption("pong game!")
 FPS = 60
 
 # colors
@@ -18,15 +18,9 @@ BACKGROUND_COLOUR = (0, 222, 222)
 # coords
 pltfrmx, pltfrmy = 100, 450
 ballx, bally = 100, 100
-bd = random.randrange(-3, 3) * 1.5
-bd2 = random.randrange(-3, 3) * 1.5
-bdx, bdy = bd, bd2
+yn = random.choice(["yes", "no"])
+yn2 = random.choice(["yes", "no"])
 
-if bd == 0:
-    bd = 4.5
-
-if bd2 == 0:
-    bd2 = -3
 
 # the thing
 game_folder = os.path.dirname(__file__)
@@ -38,13 +32,40 @@ ball = pygame.image.load(os.path.join(img_folder, "circle.png")).convert()
 ball = pygame.transform.scale(ball, (50, 50))
 ball.set_colorkey(WHITE)
 
+# ???
+if yn == "yes":
+    bdx = random.randrange(1, 5)
+    bdx = bdx * 1.5
+elif yn == "no":
+    bdx = random.randrange(1, 5)
+    bdx = bdx * 1.5
+    bdxx = bdx * 2
+    bdx = bdx - bdxx
+if yn2 == "yes":
+    bdy = random.randrange(1, 5)
+    bdy = bdx * 1.5
+elif yn2 == "no":
+    bdy = random.randrange(1, 5)
+    bdy = bdx * 1.5
+    bdyy = bdx * 2
+    bdy = bdy - bdyy
 
 # define functions
+def walls():
+    if ballx == 15:
+        bdx = 0
+
 def ballmove():
     global ballx
     global bally
     ballx += bdx
     bally += bdy
+
+def ballmoveprt2():
+    global bally
+    global bdx
+    if bally == 400:
+        bdx = bdx - bdxx
 
 def move():
     global pltfrmx
@@ -70,8 +91,11 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+
+        walls()
         move()
         ballmove()
+        ballmoveprt2()
         draw()
 
     pygame.quit()
