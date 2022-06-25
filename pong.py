@@ -53,7 +53,7 @@ elif yn2 == "no":
 # define functions
 def walls():
     if ballx == 15:
-        bdx = 0
+        bally += bdx - bdxx
 
 def ballmove():
     global ballx
@@ -92,11 +92,11 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
 
-        walls()
         move()
         ballmove()
         ballmoveprt2()
         draw()
+        walls()
 
     pygame.quit()
 
