@@ -1,11 +1,17 @@
- .hello { /* text changes */
+*{
     font-family: arial;
+}
+
+.header{
     color: blue;
-    font-size: 70px;
+    font-size:30px;
     text-align: center;
 }
-* {
-    /* ??? */
-    padding: 0;
-    margin: 0;
+
+.games{
+    text-align: center;
+    border:10px #14c8e0 solid;
+    padding:20px;
+    padding-bottom: 340;
+    margin:20px 0px;
 }
