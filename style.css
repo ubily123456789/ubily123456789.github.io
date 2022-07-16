@@ -2,6 +2,19 @@
     font-family: arial;
 }
 
+
+a{
+    color:black;
+    font-family:arial, helvetica, sans-serif;
+    font-size:30px;
+    text-decoration:none;
+    text-align:right;
+}
+
+a:hover{
+    color:red;
+}
+
 .header{
     color: blue;
     font-size:30px;
@@ -14,13 +27,4 @@
     padding:20px;
     padding-bottom: 340;
     margin:20px 0px;
-}
-
-a{
-    color:green;
-    border:1px blue solid;
-    font-family:arial, helvetica, sans-serif;
-    font-size:30px;
-    
-    text-align:right;
 }
