@@ -3,6 +3,7 @@ const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const msg = document.querySelector('.msg');
 const userList = document.querySelector('#users');
+const linkText = document.createTextNode("Iceland");
 
 
 myForm.addEventListener('submit', onSubmit);
@@ -17,10 +18,11 @@ function onSubmit(e) {
     // testing
 
     if (nameInput.value === 'testing') {
-        const li = document.createElement('li');
-        li.appendChild(document.createTextNode(`${nameInput.value}`));
-
-        userList.appendChild(li);
+        const a = document.createElement('a');
+        a.appendChild(linkText);
+        a.href = "https://ubily123456789.github.io/i/iceland.html";
+        userList.appendChild(a);
+        userList.classList.add('ull');
+        a.classList.add('lnk');
     }
-
 }

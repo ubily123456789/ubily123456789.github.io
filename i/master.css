@@ -13,16 +13,26 @@ ul {
   list-style: none;
 }
 
-ul li {
+ul{
   padding: 5px;
   background: #f4f4f4;
-  margin: 5px 0;
+  display:block;
 }
 
 header {
   background: #f4f4f4;
   padding: 1rem;
   text-align: center;
+}
+
+.lnk{
+    padding:2px;
+    border-radius:5px;
+    text-decoration:none;
+}
+
+.ull{
+    margin:5px 0;
 }
 
 .container {
