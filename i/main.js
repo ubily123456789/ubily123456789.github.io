@@ -19,6 +19,8 @@ function onSubmit(e) {
         userList.appendChild(a);
         userList.classList.add('ull');
         a.classList.add('lnk');
+
+        console.log(nameInput);
     }
 
     // testing
