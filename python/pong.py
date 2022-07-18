@@ -51,10 +51,6 @@ elif yn2 == "no":
     bdy = bdy - bdyy
 
 # define functions
-def walls():
-    if ballx == 15:
-        bally += bdx - bdxx
-
 def ballmove():
     global ballx
     global bally
