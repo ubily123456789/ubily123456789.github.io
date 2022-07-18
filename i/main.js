@@ -11,7 +11,7 @@ myForm.addEventListener('submit', onSubmit);
 function onSubmit(e) {
     e.preventDefault();
 
-    if (nameInput.value === 'google') {
+    if (nameInput.value === 'Google') {
         const a = document.createElement('a');
         a.appendChild(linkText);
         a.href = "https://ubily123456789.github.io/i/iceland.html";
