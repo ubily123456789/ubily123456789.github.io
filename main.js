@@ -1,5 +1,5 @@
-const myForm = document.querySelector('#my-form');
 const nameInput = document.querySelector('.dev');
+const myForm = document.querySelector('.sub');
 
 myForm.addEventListener('submit', onSubmit);
 
