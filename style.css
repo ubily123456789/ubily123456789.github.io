@@ -57,10 +57,17 @@ a:hover{
   color:#eee;
 }
 
-#header{
-    text-align:center;
-}
-
 #name{
   margin-bottom:10px;
+}
+
+#header{
+  text-align:center;
+}
+
+#header a{
+  border:black 1px solid;
+  padding:5px;
+  border-radius:5px;
+  margin-left:10px;
 }
