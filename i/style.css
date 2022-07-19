@@ -55,20 +55,31 @@ a:hover{
   border:3px red solid;
   margin-bottom:10px;
   padding-left:10px;
+  margin-top:10px;
 }
 
-.country{
+.contry{
   border:3px green solid;
   margin-bottom:10px;
+  margin-top:10px;
+  padding-left:10px;
 }
 
 .geysers{
   border:coral 3px solid;
   margin-bottom:10px;
+  padding-left:10px;
 }
 
 .Reykjavik{
   border:purple 3px solid;
+  padding-left:10px;
+}
+
+.no{
+  border:yellow 3px solid;
+  padding-left:10px;
+  margin-bottom:10px;
 }
 
 .caption{
