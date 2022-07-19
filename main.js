@@ -11,12 +11,6 @@ myForm.addEventListener('submit', onSubmit);
 function onSubmit(e) {
   e.preventDefault();
 
-  if (nameInput.value === 'Google') {
-      alert('you clicked me :)');
-    }
-
-  // testing
-
   if (nameInput.value === 'ReAsEaRcH StYdY') {
     const a = document.createElement('a');
     a.appendChild(linkText);
@@ -25,5 +19,11 @@ function onSubmit(e) {
     userList.appendChild(a);
     userList.classList.add('ull');
     a.classList.add('lnk');
+  }
+
+  // testing
+
+  if (nameInput.value === 'testing') {
+    alert('nothing for testing right now');
   }
 }
