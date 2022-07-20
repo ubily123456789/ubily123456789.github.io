@@ -20,11 +20,19 @@ img{
 }
 
 a{
+  text-decoration:none;
+  color:black;
+}
+
+a:hover{
+  color:red;
+}
+
+.back a{
   color:cyan;
   margin-top:-145px;
   margin-bottom:145px;
   width:60px;
-  text-decoration:none;
   background-color:#aaa;
   display: block;
   padding: 10px 15px;
@@ -32,7 +40,7 @@ a{
   border-radius: 5px;
 }
 
-a:hover{
+.back a:hover{
   background:#666;
 }
 
