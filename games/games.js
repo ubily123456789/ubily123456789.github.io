@@ -27,6 +27,7 @@ myForm.addEventListener('submit', onSubmit);
 function onSubmit(e) {
   e.preventDefault();
 
+
   while (guess != num) {
     if (guess.value == num) {
       console.log('well done you won :)');
