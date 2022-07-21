@@ -25,17 +25,17 @@ myForm.addEventListener('submit', onSubmit);
 
 
 function onSubmit(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    console.log(num);
 
-    if (guess.value == num) {
-      console.log('hi');
-    }else if (guess.value !== num) {
-      guess.value = '0';
-    }else {
-      console.log('hello');
-    }
+  if (guess.value == num) {
+    console.log('hi');
+  }else if (guess.value !== num) {
+    console.log(guess.value);
+    guess.value = '0';
+  }else {
+    console.log('hi');
+  }
 }
 
 
