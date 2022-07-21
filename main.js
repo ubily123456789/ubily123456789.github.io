@@ -14,7 +14,7 @@ function onSubmit(e) {
   if (nameInput.value === 'ReAsEaRcH StYdY') {
     const a = document.createElement('a');
     a.appendChild(linkText);
-    a.href = "dev.html";
+    a.href = "dev/dev.html";
 
     userList.appendChild(a);
     userList.classList.add('ull');
