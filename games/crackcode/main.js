@@ -1,4 +1,4 @@
-const difam = 10; // going to be input
+const difam = 10;
 const difnuml = Math.floor(Math.random() * difam) + 3;
 const difnumr = Math.floor(Math.random() * difam) + 3;
 
@@ -48,7 +48,9 @@ function onSubmit(e) {
 
 // transforming the text
 const a = document.createElement('h3');
-a.appendChild(linkText);
 a.appendChild(dev);
+if (false) {
+  a.appendChild(linkText);
+}
 
 number.appendChild(a);
