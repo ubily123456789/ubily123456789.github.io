@@ -5,7 +5,7 @@ const difnumr = Math.floor(Math.random() * difam) + 3;
 const num = Math.floor(Math.random() * 9999) + 1;
 const up = num + difnuml
 const down = num - difnumr
-const between = `The number is between ${up} and ${down}`
+const between = `The number is between ${down} and ${up}`
 
 // the random number
 console.log(`${up} : ${down}`);
