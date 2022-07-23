@@ -10,12 +10,15 @@ const between = `The number is between ${down} and ${up}`
 // the random number
 console.log(`${up} : ${down}`);
 
+let outputext = 'hello';
+
 
 // selecting the html
 const number = document.querySelector('#number');
-const userList = document.querySelector('#myForm');
 const myForm = document.querySelector('#my-form');
+const output = document.querySelector('#output');
 let guess = document.querySelector('.btnn');
+let outputText = document.querySelector(outputext);
 const dev = document.createTextNode(between);
 const linkText = document.createTextNode(`${num} . . . . . `);
 
@@ -23,10 +26,12 @@ const linkText = document.createTextNode(`${num} . . . . . `);
 
 myForm.addEventListener('submit', onSubmit);
 
+let somthing = 'to'
 
 function onSubmit(e) {
   e.preventDefault();
 
+  somthing = 'hi'
 
   while (guess != num) {
     if (guess.value == num) {
@@ -34,7 +39,7 @@ function onSubmit(e) {
       break
     }else if (guess.value !== num) {
       console.log(guess.value);
-      guess.value = '0';
+      guess.value = '';
       break
     }else {
       console.log('hi');
@@ -44,13 +49,18 @@ function onSubmit(e) {
 }
 
 
+
+console.log(somthing);
+
 // ------------------------------------------------------------------------------------------------------------------------------------
 
 // transforming the text
 const a = document.createElement('h3');
-if (false) {
-  a.appendChild(linkText);
-}
-a.appendChild(dev);
+const out = document.createElement('h3');
+if (true) {a.appendChild(linkText);}
 
+a.appendChild(dev);
 number.appendChild(a);
+
+const outp = document.createTextNode(outputext);
+output.appendChild(outp);
