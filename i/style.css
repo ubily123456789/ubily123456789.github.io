@@ -30,14 +30,12 @@ a:hover{
 
 .back a{
   color:cyan;
-  margin-top:-145px;
-  margin-bottom:145px;
-  width:60px;
   background-color:#aaa;
-  display: block;
-  padding: 10px 15px;
-  background: #333;
-  border-radius: 5px;
+  padding:10px 15px;
+  background:#333;
+  border-radius:5px;
+  position:absolute;
+  top:17px;
 }
 
 .back a:hover{

@@ -1,45 +1,45 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
 }
 
 ul{
-    list-style: none;
+  list-style: none;
 }
 
 ul{
-    padding: 5px;
-    background: #f4f4f4;
-    display:block;
+  padding: 5px;
+  background: #f4f4f4;
+  display:block;
 }
 
 header {
-    background: #f4f4f4;
-    padding: 1rem;
-    text-align: center;
-    float:center;
+  background: #f4f4f4;
+  padding: 1rem;
+  text-align: center;
+  float:center;
 }
 
 .lnk{
-    padding:2px;
-    border-radius:5px;
-    text-decoration:none;
+  padding:2px;
+  border-radius:5px;
+  text-decoration:none;
 }
 
 .lunk{
-    padding: 5px;
-    background: #f4f4f4;
-    display:block;
+  padding: 5px;
+  background: #f4f4f4;
+  display:block;
 }
 
 .ull{
-    margin:5px 0;
+  margin:5px 0;
 }
 
 .container {
@@ -67,20 +67,19 @@ header {
 }
 
 #back{
-    margin-left:10px;
-    margin-top:-70px;
-    margin-bottom:70px;
+  margin-left:10px;
 }
 
+
 .btn {
-  display: block;
-  width: 100%;
-  padding: 10px 15px;
-  border: 0;
-  background: #333;
-  color: #fff;
-  border-radius: 5px;
-  margin: 5px 0;
+  display:block;
+  width:100%;
+  padding:10px 15px;
+  border:0;
+  background:#333;
+  color:#fff;
+  border-radius:5px;
+  margin:5px 0;
 }
 
 .btn:hover {
@@ -92,25 +91,30 @@ header {
   color: #fff;
 }
 
+.fix{
+  padding-top:7px;
+  padding-bottom:7px;
+}
+
 .error {
-  background: orangered;
+  background:orangered;
   color: #fff;
-  padding: 5px;
-  margin: 5px;
+  padding:5px;
+  margin:5px;
 }
 
 .go-back{
-    margin-top:7px;
-    width:100px;
-    text-decoration:none;
-    color:cyan;
-    background-color:#aaa;
+  /* margin-top:7px;
+  width:100px;
+  text-decoration:none;
+  color:cyan;
+  background-color:#aaa; */
 }
 
 .go-back:hover{
-    background:#666;
+  background:#666;
 }
 
 /* .pass{ */
-    /* font-size:20px; */
+  /* font-size:20px; */
 /* } */
