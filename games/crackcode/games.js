@@ -53,7 +53,7 @@ function onSubmit(e) {
 // transforming the text
 const a = document.createElement('h3');
 const out = document.createElement('h3');
-if (true) {a.appendChild(linkText);}
+if (false) {a.appendChild(linkText);}
 
 a.appendChild(dev);
 number.appendChild(a);
