@@ -27,15 +27,17 @@ myForm.addEventListener('submit', onSubmit);
 function onSubmit(e) {
   e.preventDefault();
 
-
   while (guess != num) {
     if (guess.value == num) {
-      console.log('well done you won :)');
+      res.innerHTML = 'Well done you won :)';
       break
+
     }else if (guess.value !== num) {
-      console.log(guess.value);
-      guess.value = '0';
+      res.innerHTML = 'Inncorect try again';
+      setTimeout(() => res.innerHTML = '', 3000);
+      guess.value = '';
       break
+
     }else {
       console.log('hi');
       break
