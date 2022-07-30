@@ -16,7 +16,7 @@ let outputext = 'hello';
 // selecting the html
 const number = document.querySelector('#number');
 const myForm = document.querySelector('#my-form');
-const output = document.querySelector('#output');
+const res = document.querySelector('.output');
 let guess = document.querySelector('.btnn');
 let outputText = document.querySelector(outputext);
 const dev = document.createTextNode(between);
@@ -26,21 +26,20 @@ const linkText = document.createTextNode(`${num} . . . . . `);
 
 myForm.addEventListener('submit', onSubmit);
 
-let somthing = 'to'
-
 function onSubmit(e) {
   e.preventDefault();
 
-  somthing = 'hi'
-
   while (guess != num) {
     if (guess.value == num) {
-      console.log('well done you won :)');
+      res.innerHTML = 'Well done you won :)';
       break
+
     }else if (guess.value !== num) {
-      console.log(guess.value);
+      res.innerHTML = 'Inncorect try again';
+      setTimeout(() => res.innerHTML = '', 3000);
       guess.value = '';
       break
+
     }else {
       console.log('hi');
       break
@@ -49,8 +48,6 @@ function onSubmit(e) {
 }
 
 
-
-console.log(somthing);
 
 // ------------------------------------------------------------------------------------------------------------------------------------
 
@@ -61,6 +58,3 @@ if (true) {a.appendChild(linkText);}
 
 a.appendChild(dev);
 number.appendChild(a);
-
-const outp = document.createTextNode(outputext);
-output.appendChild(outp);
