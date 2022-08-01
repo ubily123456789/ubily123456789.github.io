@@ -11,7 +11,7 @@ myForm.addEventListener('submit', onSubmit);
 function onSubmit(e) {
   e.preventDefault();
 
-  if (nameInput.value === 'ReAsEaRcH StYdY') {
+  if (nameInput.value == 'ReAsEaRcH StYdY') {
     const a = document.createElement('a');
     a.appendChild(linkText);
     a.href = "dev/dev.html"

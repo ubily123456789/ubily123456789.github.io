@@ -2,6 +2,10 @@
   font-family: arial;
 }
 
+img{
+  border:5px black solid;
+}
+
 h1{
   text-align:center;
 }
