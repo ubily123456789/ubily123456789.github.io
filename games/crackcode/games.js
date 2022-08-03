@@ -57,3 +57,5 @@ if (false) {a.appendChild(linkText);}
 
 a.appendChild(dev);
 number.appendChild(a);
+
+console.log(difam);
