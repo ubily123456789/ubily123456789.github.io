@@ -1,4 +1,4 @@
-# My baseball game :)
+# My pong game :)
 import pygame
 import random
 import os
