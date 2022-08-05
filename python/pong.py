@@ -9,6 +9,8 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("pong game!")
 FPS = 60
 
+vel = 3
+
 # colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -32,36 +34,17 @@ ball = pygame.image.load(os.path.join(img_folder, "circle.png")).convert()
 ball = pygame.transform.scale(ball, (50, 50))
 ball.set_colorkey(WHITE)
 
-# ???
-if yn == "yes":
-    bdx = random.randrange(1, 5)
-    bdx = bdx * 1.5
-elif yn == "no":
-    bdx = random.randrange(1, 5)
-    bdx = bdx * 1.5
-    bdxx = bdx * 2
-    bdx = bdx - bdxx
-if yn2 == "yes":
-    bdy = random.randrange(1, 5)
-    bdy = bdx * 1.5
-elif yn2 == "no":
-    bdy = random.randrange(1, 5)
-    bdy = bdx * 1.5
-    bdyy = bdx * 2
-    bdy = bdy - bdyy
 
 # define functions
+
 def ballmove():
     global ballx
     global bally
-    ballx += bdx
-    bally += bdy
-
-def ballmoveprt2():
-    global bally
-    global bdx
-    if bally == 400:
-        bdx = bdx - bdxx
+    global vel
+    ballx += vel
+    bally += vel
+    if bally == 500:
+        vel -= 10
 
 def move():
     global pltfrmx
@@ -89,10 +72,8 @@ def main():
                 run = False
 
         move()
-        ballmove()
-        ballmoveprt2()
         draw()
-        walls()
+        ballmove()
 
     pygame.quit()
 
