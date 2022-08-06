@@ -6,6 +6,10 @@ img{
   border:5px black solid;
 }
 
+ul li{
+  list-style:none;
+}
+
 h1{
   text-align:center;
 }
@@ -34,6 +38,10 @@ a:hover{
   padding:20px;
   padding-bottom: 340;
   margin:20px 0px;
+}
+
+.copyright{
+  text-align:center;
 }
 
 .goback a{
