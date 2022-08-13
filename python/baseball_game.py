@@ -1,12 +1,16 @@
 # making math problem solvers
+import math
+
+pi = math.pi
+
 def steps(num):
     other = 0
     ans = 0
     for i in range(num):
         other = other + 1
-        print(other)
+        # print(other)
         ans = ans + other
-    print("")
+    # print("")
     print(ans)
 
 def square(num):
@@ -20,12 +24,10 @@ def factorial(num):
     ans = 1
     for i in range(num):
         other = other + 1
-        print(other)
+        # print(other)
         ans = ans * other
-    print("")
+    # print("")
     print(ans)
 
 def root(num):
     power(num, 0.5)
-
-factorial(12)
