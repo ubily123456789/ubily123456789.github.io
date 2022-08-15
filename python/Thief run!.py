@@ -1,4 +1,5 @@
 import pygame
+import random
 import os
 
 WIDTH, HEIGHT = 900, 600
@@ -6,13 +7,19 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Pong!")
 
 FPS = 60
-VELY = 5
-VELX = 5
+VELY = random.randrange(3, 7)
+VELX = random.randrange(3, 7)
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 CYAN = (0, 255, 255)
+
+pygame.font.init()
+myfont = pygame.font.SysFont("monospace", 75)
+label = myfont.render("", 1, BLACK)
+
+score = 0
 
 game_folder = os.path.dirname(__file__)
 img_folder = os.path.join(game_folder, "team_picture")
@@ -30,6 +37,16 @@ pltfrmx = 100
 pltfrmy = 450
 
 # define functions
+def score():
+    pass
+
+def lose():
+    global label
+    if bally > 500:
+        label = myfont.render("you lost", 1, BLACK)
+        WIN.blit(label, (250, 250))
+        pygame.display.update()
+
 def draw():
     WIN.fill(CYAN)
     WIN.blit(ball, (ballx, bally))
@@ -56,13 +73,13 @@ def walls():
     global ballx
     global VELY
     global VELX
-    if bally == 0:
+    if bally < 0:
         VELY -= VELY * 2
-    if ballx == 830:
-        VELX -= VELX * 2 # ballx > pltfrmx - 150
-    if bally == 430 and ballx :
+    if ballx > 830:
+        VELX -= VELX * 2
+    if bally > 430 and bally < 440 and ballx < pltfrmx + 300 and ballx > pltfrmx - 50:
         VELY -= VELY * 2
-    if ballx == 0:
+    if ballx < 0:
         VELX -= VELX * 2
 
 def main():
@@ -78,6 +95,8 @@ def main():
         move()
         move2()
         walls()
+        lose()
+        score()
 
     pygame.quit()
 
