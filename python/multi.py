@@ -1,7 +1,7 @@
 import pygame
 import time
 
-time.sleep(20)
+time.sleep(3)
 
 WIDTH, HEIGHT = 1200, 600
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
