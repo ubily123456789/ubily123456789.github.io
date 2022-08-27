@@ -1,29 +1,24 @@
 import pygame
-import time
-
-time.sleep(3)
 
 WIDTH, HEIGHT = 1200, 600
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("")
-
+pygame.display.set_caption("K & P")
 FPS = 60
 
+# colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-pygame.font.init()
-myfont = pygame.font.SysFont("arial", 75)
-label = myfont.render("in the mornings its fun but the evenings", 1, BLACK)
-label2 = myfont.render("its not", 1, BLACK)
-label3 = myfont.render("and i dont like it", 1, BLACK)
+# score
+k = 0
+p = 0
 
 def draw():
     WIN.fill(WHITE)
-    WIN.blit(label, (0, 150))
-    WIN.blit(label2, (0, 250))
-    WIN.blit(label3, (0, 350))
     pygame.display.flip()
+
+def score():
+    pass
 
 def main():
     clock = pygame.time.Clock()
@@ -32,12 +27,15 @@ def main():
         clock.tick(FPS)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                run = True
+                run = False
 
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_a:
+                    global p
+                    p += 1
         draw()
-        time.sleep(20)
-        run = False
+
     pygame.quit()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
