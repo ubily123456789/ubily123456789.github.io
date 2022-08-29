@@ -31,6 +31,7 @@ function Time() {
   // Adding time elements to the div
   document.getElementById("digital-clock").innerText = hour + " : " + minute + " : " + second + " " + period;
   // Set Timer to 1 sec (1000 ms)
+  // `${hour} : ${minute} : ${second} ${period}`
   setTimeout(Time, 1000);
 }
  // Function to update time elements if they are less than 10
