@@ -1,52 +1,37 @@
 # Kenneth
 
-import pygame
-import os
-pygame.font.init()
+def translate(text):
+    translation = ""
+    for letter in text:
+        if letter in "ñÑ": translation = translation + "h"
+        elif letter in "çÇ": translation = translation + "e"
+        elif letter in "ß": translation = translation + "o"
+        elif letter in "ö": translation = translation + "l"
+        elif letter in "µ": translation = translation + ":)"
+        elif letter in "ü": translation = translation + " "
+        else: translation = translation + letter
 
-FONT = pygame.font.SysFont('comicsans', 100)
-
-SCREENX = 1700
-SCREENY = 900
-
-WHITE = (255, 255, 255)
-
-x = 0
-TEXT = FONT.render(str(x), 1, (255, 255, 255))
-
-WIN = pygame.display.set_mode((SCREENX, SCREENY))
-BACKGROUND = pygame.transform.scale(pygame.image.load(
-    os.path.join('Assets', 'space.png')), (SCREENX, SCREENY))
+    return translation
 
 
-def draw_window():
-    WIN.blit(BACKGROUND, (0, 0))
-    TEXT = FONT.render(str(x), 1, (255, 255, 255))
-    WIN.blit(TEXT, ((SCREENX - TEXT.get_width()) /
-         2, (SCREENY - TEXT.get_height()) / 2))
-    pygame.display.update()
 
 
-def main():
-    run = True
-    while run:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                run = False
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE:
-                    global x
-                    x += 1
+def encode(text):
+    translation = ""
+    for letter in text:
+        if letter in "h": translation = translation + "ñ"
+        elif letter in "e": translation = translation + "ç"
+        elif letter in "o": translation = translation + "ß"
+        elif letter in "l": translation = translation + "ö"
+        else: translation = translation + letter
 
-        draw_window()
-    pygame.quit
+    return translation
 
-
-if __name__ == '__main__':
-    main()
 
 #-----------------------------------------------------------------------------------------------------------
 
+
+print(translate("hello"))
 
 
 # Philip
