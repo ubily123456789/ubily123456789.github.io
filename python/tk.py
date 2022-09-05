@@ -1,4 +1,5 @@
 import pygame
+import os
 
 WIDTH, HEIGHT = 1200, 600
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -9,20 +10,41 @@ FPS = 60
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-p1 = 0
-p2 = 0
+shuttlesize = 45
 
+game_folder = os.path.dirname(__file__)
+img_folder = os.path.join(game_folder, "team_picture")
+background = pygame.image.load(os.path.join("Assets", "space.png"))
+background = pygame.transform.scale(background, (WIDTH, HEIGHT))
+earth = pygame.image.load(os.path.join("Assets", "earth.jpg"))
+shuttle = pygame.image.load(os.path.join("Assets", "shuttle.jpg"))
+shuttle = pygame.transform.rotate(pygame.transform.scale(shuttle, (512, 288)), shuttlesize)
+shuttle.set_colorkey((12, 12, 12))
+
+
+# coords
+shuttlex = 100
+shuttley = 100
+
+# text
 pygame.font.init()
-myfont = pygame.font.SysFont("arial", 75)
-label = myfont.render(str(p1), 1, BLACK)
-label2 = myfont.render(str(p2), 1, BLACK)
+myfont = pygame.font.SysFont("comicsans", 75)
 
 # functions
 def draw():
-    WIN.fill(WHITE)
-    WIN.blit(label, (50, 50))
-    WIN.blit(label2, (1100, 50))
+    WIN.blit(background, (0, 0))
+    WIN.blit(earth, (-100, -100))
+    WIN.blit(shuttle, (shuttlex, shuttley))
     pygame.display.flip()
+
+def move():
+    global shuttlex
+    global shuttley
+    keys_press = pygame.key.get_pressed()
+    if keys_press[pygame.K_a]: shuttlex -= 7
+    if keys_press[pygame.K_d]: shuttlex += 7
+    if keys_press[pygame.K_w]: shuttley -= 7
+    if keys_press[pygame.K_s]: shuttley += 7
 
 def main():
     clock = pygame.time.Clock()
@@ -33,12 +55,8 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
 
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LCTRL:
-                    global p1
-                    p1 = 1
-
         draw()
+        move()
 
     pygame.quit()
 
