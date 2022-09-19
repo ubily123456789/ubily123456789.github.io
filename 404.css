@@ -1,4 +1,23 @@
+*{
+  margin:0;
+  padding:0;
+}
+
 #top{
-  display:block;
-  background-color: blue;
+  background-color:rgb(3, 90, 200);
+  font-size:30px;
+  margin-bottom:30px;
+  margin-left:10px;
+  margin-top:10px;
+}
+
+#error{
+  position:absolute;
+  top:100px;
+  left:20px;
+}
+
+#hello{
+  position:absolute;
+  top:120;
 }
