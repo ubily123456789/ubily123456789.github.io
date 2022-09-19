@@ -1,5 +1,6 @@
 # a game for me and Philip
 import pygame
+import maths
 
 # window stuff
 WIDTH, HEIGHT = 1200, 600
@@ -13,7 +14,7 @@ BLACK = (0, 0, 0)
 
 # score
 a = ""
-k = 0
+k = 2
 p = 0
 p_l = 1
 k_l = 1
@@ -39,7 +40,7 @@ def end():
     global k
     global p
     global a
-    if k > 39088168: a = "Big bro Won!"; p = 0; k = 39088169
+    # if k > 39088168: a = "Big bro Won!"; p = 0; k = 39088169
     if p > 39088168: a = "Philip Won!"; k = 0; p = 39088169
 
 def main():
@@ -59,6 +60,9 @@ def main():
                 if event.key == pygame.K_l: p += p_l; p_l = p - p_l;
 
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_a: k += k_l; k_l = k - k_l
+
+            if event.type == pygame.KEYUP:
                 if event.key == pygame.K_a: k += k_l; k_l = k - k_l
 
             if event.type == pygame.KEYDOWN:

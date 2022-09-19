@@ -35,7 +35,19 @@
 
     <div class="users"></div>
 
+    <input type="text" id="hi">
+    <input type="button" value="hi" onclick="pass()">
+
     <div style="margin-top:300px"></div>
+
+    <script type="text/javascript">
+      const hi = document.getElementById('#hi').value
+      function pass() {
+        if (hi == 'higjafertz') {
+          window.location = 'password.html'}
+          console.log(hi)
+        }
+    </script>
 
     <!-- <script src="main.js" type="text/javascript" charset="utf-8"></script> -->
   </body>
