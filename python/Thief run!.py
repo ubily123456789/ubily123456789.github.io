@@ -95,6 +95,8 @@ def main():
         move()
         move2()
         walls()
+
+
         lose()
         score()
 
