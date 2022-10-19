@@ -14,10 +14,10 @@ BLACK = (0, 0, 0)
 
 # score
 a = ""
-k = 2
+k = 0
 p = 0
 p_l = 1
-k_l = 1
+k_l = 199
 
 # text
 pygame.font.init()
@@ -40,8 +40,8 @@ def end():
     global k
     global p
     global a
-    # if k > 39088168: a = "Big bro Won!"; p = 0; k = 39088169
-    if p > 39088168: a = "Philip Won!"; k = 0; p = 39088169
+    if k > 99: a = "Big bro Won!"; p = 0; k = 100
+    if p > 99: a = "Philip Won!"; k = 0; p = 100
 
 def main():
     clock = pygame.time.Clock()
@@ -57,19 +57,16 @@ def main():
             global k
             global k_l
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_l: p += p_l; p_l = p - p_l;
+                if event.key == pygame.K_l: p += 1
 
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_a: k += k_l; k_l = k - k_l
-
-            if event.type == pygame.KEYUP:
-                if event.key == pygame.K_a: k += k_l; k_l = k - k_l
+                if event.key == pygame.K_a: k += 1
 
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_s: k += k_l; k_l = k - k_l
+                if event.key == pygame.K_s: k += 1
 
             if event.type == pygame.KEYUP:
-                if event.key == pygame.K_s: k += k_l; k_l = k - k_l
+                if event.key == pygame.K_s: k += 1
 
         draw()
         end()
