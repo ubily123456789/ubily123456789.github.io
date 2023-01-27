@@ -2,6 +2,10 @@
   font-family:arial, helvetica, sans-serif;
 }
 
+body{
+  background-color:rgb(200,200,200);
+}
+
 a{
   text-decoration:none;
   color:black;
