@@ -11,7 +11,7 @@ function onSubmit(e) {
   e.preventDefault();
 
   if (nameInput.value === 'Google') {
-    window.location = "iceland.html"
+    window.location = ""
   }
 
   // testing
