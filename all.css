@@ -29,3 +29,15 @@ a:hover{
 .down{
   margin-top:60px;
 }
+
+.audio{
+  display:flex;
+}
+
+#colem{
+  padding:1%;
+}
+
+.colem1{
+  margin-right: 55px;
+}
