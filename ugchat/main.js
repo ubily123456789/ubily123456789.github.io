@@ -39,7 +39,7 @@ window.onload = function() {
 
       var title = document.createElement('h1')
       title.setAttribute('id', 'title')
-      title.textContent = 'MemeChat 2.0'
+      title.textContent = 'ugchat'
 
       title_inner_container.append(title)
       title_container.append(title_inner_container)
@@ -207,6 +207,10 @@ window.onload = function() {
     }
     // Sends message/saves the message to firebase database
     send_message(message){
+
+
+
+
       var parent = this
       // if the local storage name is null and there is no message
       // then return/don't send the message. The user is somehow hacking
@@ -215,22 +219,44 @@ window.onload = function() {
       if(parent.get_name() == null && message == null){
         return
       }
+      if(parent.get_name() == "ubily5" && message == "jackjackatak"){
+        // Get the firebase database value
+        db.ref('ham/').once('value', function(message_object) {
+          // This index is mortant. It will help organize the chat in order
+          var index = parseFloat(message_object.numChildren()) + 1
+          db.ref('ham/' + `message_${index}`).set({
+            name: parent.get_name(),
+            message: message,
+            index: index
+          })
+          .then(function(){
+            // After we send the chat refresh to get the new messages
+            parent.refresh_chat()
+          })
+        })
+      }
 
-      // Get the firebase database value
-      db.ref('chats/').once('value', function(message_object) {
-        // This index is mortant. It will help organize the chat in order
-        var index = parseFloat(message_object.numChildren()) + 1
-        db.ref('chats/' + `message_${index}`).set({
-          name: parent.get_name(),
-          message: message,
-          index: index
+      else{
+        // Get the firebase database value
+        db.ref('chats/').once('value', function(message_object) {
+          // This index is mortant. It will help organize the chat in order
+          var index = parseFloat(message_object.numChildren()) + 1
+          db.ref('chats/' + `message_${index}`).set({
+            name: parent.get_name(),
+            message: message,
+            index: index
+          })
+          .then(function(){
+            // After we send the chat refresh to get the new messages
+            parent.refresh_chat()
+          })
         })
-        .then(function(){
-          // After we send the chat refresh to get the new messages
-          parent.refresh_chat()
-        })
-      })
+      }
     }
+
+
+
+
     // Get name. Gets the username from localStorage
     get_name(){
       // Get the name from localstorage
@@ -243,7 +269,7 @@ window.onload = function() {
     }
     // Refresh chat gets the message/chat data from firebase
     refresh_chat(){
-      var chat_content_container = document.getElementById('chat_content_container')
+      var ham = firebase.database().ref("ham/message_1/message")
 
       // Get the chats from firebase
       db.ref('chats/').on('value', function(messages_object) {
@@ -322,6 +348,12 @@ window.onload = function() {
         chat_content_container.scrollTop = chat_content_container.scrollHeight;
     })
 
+      if (ham.path.pieces_[1] === "message_1") {
+        console.log(ham.path.pieces_[1]);
+        var aufio = document.querySelector('#aufio');
+        aufio.setAttribute("src", "gd/famous/ham.mp3")
+        aufio.play();
+      }
     }
   }
   // So we've "built" our app. Let's make it work!!
