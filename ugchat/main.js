@@ -1,14 +1,23 @@
 // We enclose this in window.onload.
 // So we don't have ridiculous errors.
 window.onload = function() {
+  var ioas = true
+  pass = "376204815701289219723219555"
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyChZwWEv72jwnBMuyU1pnqbDOacdg2Ul6o",
-    authDomain: "ugchat-9174b.firebaseapp.com",
-    projectId: "ugchat-9174b",
-    storageBucket: "ugchat-9174b.appspot.com",
-    messagingSenderId: "510338746800",
-    appId: "1:510338746800:web:598053ae03269a8991ee75"
+    // apiKey: "AIzaSyChZwWEv72jwnBMuyU1pnqbDOacdg2Ul6o",
+    // authDomain: "ugchat-9174b.firebaseapp.com",
+    // projectId: "ugchat-9174b",
+    // storageBucket: "ugchat-9174b.appspot.com",
+    // messagingSenderId: "510338746800",
+    // appId: "1:510338746800:web:598053ae03269a8991ee75"
+    apiKey: "AIzaSyDcIyqIu52ASynIuWyxwFOePUT4GLIG6bY",
+    authDomain: "class-chat-76fde.firebaseapp.com",
+    databaseURL: "https://class-chat-76fde-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "class-chat-76fde",
+    storageBucket: "class-chat-76fde.appspot.com",
+    messagingSenderId: "279125482016",
+    appId: "1:279125482016:web:e8ec7a0c64ab9cfe293a45"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -64,27 +73,39 @@ window.onload = function() {
 
       var join_input_container = document.createElement('div')
       join_input_container.setAttribute('id', 'join_input_container')
+      var pass_input_container = document.createElement('div')
+      pass_input_container.setAttribute('id', 'join_input_container')
+
 
       var join_input = document.createElement('input')
       join_input.setAttribute('id', 'join_input')
       join_input.setAttribute('maxlength', 15)
-      join_input.placeholder = 'No.... It\'s Patrick Star'
+      join_input.placeholder = 'Is mr christie waching us 🤨'
+      var br = document.createElement('br')
+      var pass_input = document.createElement('input')
+      pass_input.setAttribute('id', 'join_input')
+      pass_input.setAttribute('type', 'password')
+      pass_input.setAttribute('maxlength', 15)
+      pass_input.placeholder = 'Are you tho 🤨'
       // Every time we type into the join_input
       join_input.onkeyup  = function(){
-        // If the input we have is longer that 0 letters
+        var checkinput = join_input.value.toLowerCase()
         if(join_input.value.length > 0){
           // Make the button light up
           join_button.classList.add('enabled')
           // Allow the user to click the button
           join_button.onclick = function(){
+            var u = pass_input.value
+            var a = imint(u)
+            console.log(u)
             // Save the name to local storage. Passing in
             // the join_input.value
-            parent.save_name(join_input.value)
-            // Remove the join_container. So the site doesn't look weird.
-            join_container.remove()
-            // parent = this. But it is not the join_button
-            // It is (MEME_CHAT = this).
-            parent.create_chat()
+            if (a == pass) {
+              parent.save_name(join_input.value)
+              join_container.remove()
+              parent.create_chat()
+            }
+
           }
         }else{
           // If the join_input is empty then turn off the
@@ -96,7 +117,9 @@ window.onload = function() {
       // Append everything to the body
       join_button_container.append(join_button)
       join_input_container.append(join_input)
-      join_inner_container.append(join_input_container, join_button_container)
+      join_input_container.append(br)
+      pass_input_container.append(pass_input)
+      join_inner_container.append(join_input_container, pass_input_container, join_button_container)
       join_container.append(join_inner_container)
       document.body.append(join_container)
     }
@@ -238,10 +261,10 @@ window.onload = function() {
 
       else{
         // Get the firebase database value
-        db.ref('chats/').once('value', function(message_object) {
+        db.ref('/').once('value', function(message_object) {
           // This index is mortant. It will help organize the chat in order
           var index = parseFloat(message_object.numChildren()) + 1
-          db.ref('chats/' + `message_${index}`).set({
+          db.ref('/' + `message_${index}`).set({
             name: parent.get_name(),
             message: message,
             index: index
@@ -272,7 +295,7 @@ window.onload = function() {
       var ham = firebase.database().ref("ham/message_1/message")
 
       // Get the chats from firebase
-      db.ref('chats/').on('value', function(messages_object) {
+      db.ref('/').on('value', function(messages_object) {
         // When we get the data clear chat_content_container
         chat_content_container.innerHTML = ''
         // if there are no messages in the chat. Retrun . Don't load anything
