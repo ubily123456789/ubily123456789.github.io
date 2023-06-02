@@ -17,6 +17,8 @@ function onSubmit(e) {
   // testing
 
   if (nameInput.value === 'testing') {
-    alert('nothing for testing right now');
+    if (ver) {
+      
+    }
   }
 }

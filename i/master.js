@@ -7,3 +7,7 @@ function onSubmit(e) {
 
     alert('hello');
 }
+
+if (!ver) {
+  
+}
