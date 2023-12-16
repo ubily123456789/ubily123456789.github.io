@@ -1,0 +1,21 @@
+*{
+    font-family: arial;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin: 10px;
+}
+
+input {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#result {
+    align-content: center;
+}
