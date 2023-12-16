@@ -1,9 +1,9 @@
 let re = document.getElementById('ree')
 
 const searchParams = new URLSearchParams(window.location.search);
-let gift = searchParams.get('ham')
+let gift = searchParams.get('bckptxt')
 
-if (searchParams.has('args') && searchParams.get('bckbtxt')) {
+if (searchParams.has('args') && searchParams.get('bckptxt')) {
 
     let ham = '';
 
