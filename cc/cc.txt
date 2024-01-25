@@ -1,0 +1,10 @@
+Let's make a game!
+  name: rehehehehhehehehe
+
+Buildings
+ *ham
+   name: ham
+   desc: A big friendly cow that generates 1 cream per second.
+   cost:20 cream
+   on tick: give 1 cream
+  cost increase: 100%
